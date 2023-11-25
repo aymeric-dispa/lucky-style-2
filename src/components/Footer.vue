@@ -44,11 +44,11 @@ export default {
 
 a:any-link {
   text-decoration: none !important;
-  color: rgba(112, 233, 93, 0.89);
+  color: rgba(139, 173, 241, 0.8);
 }
 
 a:hover {
-  color: rgba(99, 229, 47, 0.97);
+  color: rgba(59, 93, 231, 0.97);
 }
 
 </style>

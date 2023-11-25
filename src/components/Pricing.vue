@@ -19,11 +19,10 @@
           <li>Grande race: Retriever, Bergers, Colley, Border Collie, Husky...</li>
           <li>Très Grande race: Terre Neuve, Bouvier Bernois, Montagne des pyrénées...</li>
         </ul>
-        <br/>
         <h3>Liste des prix</h3>
         Veuillez selectionner le service dont votre animal a besoin ci-dessous afin d'afficher le prix correspondant
       </div>
-      <div class="accordion" id="pricingAccordion">
+      <div class="accordion" id="pricingAccordion" >
         <template v-for="price in prices" :key="price.name">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -52,13 +51,14 @@
                 </template>
                 </tbody>
               </table>
-              <p style="padding-left: 10px">
-                {{ price.text }}
-              </p>
+              <p style="padding-left: 10px" v-html="price.text"></p>
             </div>
           </div>
         </template>
       </div>
+      <p style="padding-top: 10px">
+        <strong>⚠️ Un supplément sur le toilettage pourra être demandé en cas de rendez-vous non honoré.</strong>
+      </p>
     </div>
   </div>
 </template>
@@ -75,42 +75,43 @@ const dogSizes = {
 
 
 const tonte = [
-  {differentiator: dogSizes.MINI.valueOf(), prix: "à partir de 32€*"},
-  {differentiator: dogSizes.SMALL.valueOf(), prix: "à partir de 37€*"},
-  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "à partir de 42€*"},
-  {differentiator: dogSizes.BIG.valueOf(), prix: "à partir de 57€*"},
-  {differentiator: dogSizes.HUGE.valueOf(), prix: "à partir de 67€*"},
-  {differentiator: dogSizes.COCKER.valueOf(), prix: "à partir de 52€*"},
+  {differentiator: dogSizes.MINI.valueOf(), prix: "à partir de 35€"},
+  {differentiator: dogSizes.SMALL.valueOf(), prix: "à partir de 40€"},
+  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "à partir de 45€"},
+  {differentiator: dogSizes.BIG.valueOf(), prix: "à partir de 60€"},
+  {differentiator: dogSizes.HUGE.valueOf(), prix: "à partir de 70€"},
+  {differentiator: dogSizes.COCKER.valueOf(), prix: "de 45€ à 57€"},
 ];
 
 const bath = [
   {differentiator: dogSizes.MINI.valueOf(), prix: "35€/h"},
   {differentiator: dogSizes.SMALL.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.BIG.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.HUGE.valueOf(), prix: "35€/h"}
+  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "40€/h"},
+  {differentiator: dogSizes.BIG.valueOf(), prix: "40€/h"},
+  {differentiator: dogSizes.HUGE.valueOf(), prix: "40€/h"}
 ];
 
 const cut = [
-  {differentiator: dogSizes.SMALL.valueOf(), prix: "de 42€ à 52€*"},
-  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "de 52€ à 62€*"},
-  {differentiator: dogSizes.BIG.valueOf(), prix: "à partir de 77€*"},
-  {differentiator: dogSizes.HUGE.valueOf(), prix: "35€/h"}
+  {differentiator: dogSizes.SMALL.valueOf(), prix: "de 45€ à 55€*"},
+  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "de 55€ à 65€*"},
+  {differentiator: dogSizes.BIG.valueOf(), prix: "40€/h"},
+  {differentiator: dogSizes.HUGE.valueOf(), prix: "40€/h"}
 ];
 const trimming = [
   {differentiator: dogSizes.SMALL.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.BIG.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.HUGE.valueOf(), prix: "35€/h"}
+  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "40€/h"},
+  {differentiator: dogSizes.BIG.valueOf(), prix: "40€/h"},
+  {differentiator: dogSizes.HUGE.valueOf(), prix: "40€/h"}
 ];
 const other = [
   {differentiator: "Coupe des ongles", prix: "de 5€ à 10€"},
-  {differentiator: "Chats et autres toilettages", prix: "30€/h"}
+  {differentiator: "Toilettage chat et NAC", prix: "35€/h"}
 ];
 
 const cocker = [
-  {differentiator: "Dos trimmer", prix: "62€"},
-  {differentiator: "Dos tondu", prix: "57€"}
+  {differentiator: "Dos trimmer", prix: "65€"},
+  {differentiator: "Dos tondu", prix: "60€"},
+  {differentiator: "Tonte", prix: "de 45€ à 57€"}
 ];
 
 const prices = [
@@ -118,14 +119,18 @@ const prices = [
     priceInfo: tonte,
     name: "Tonte",
     differentiator: "Taille",
-    text: "*des frais additionnels équivalents au tarif horaire (35€/h) seront demandés en cas de travail supplémentaire."
+    text: "*Des frais additionnels équivalents au tarif horaire (apd. 35€/h) seront facturés en cas de travail supplémentaire."
   },
-  {priceInfo: bath, name: "Bain et démelage", differentiator: "Taille"},
+  { priceInfo: bath,
+    name: "Bain et démelage",
+    differentiator: "Taille",
+    text: ["*Des frais additionnels équivalents au tarif horaire (apd. 35€/h) seront facturés en cas de travail supplémentaire.",
+        "En cas d'utilisation de shampoing anti-puce, des frais additionnels de 3€ à 10€ (selon la taille) seront appliqués si nécessaire."].join('<br>')
+  },
   {
     priceInfo: cut,
     name: "Coupe ciseaux",
-    differentiator: "Taille",
-    text: "*des frais additionnels équivalents au tarif horaire (35€/h) seront demandés en cas de travail supplémentaire."
+    differentiator: "Taille"
   },
   {priceInfo: trimming, name: "Trimming", differentiator: "Taille"},
   {priceInfo: cocker, name: "Cocker", differentiator: "Service"},
@@ -154,7 +159,7 @@ export default {
 <style scoped>
 
 #pricing{
-  background: rgba(218, 241, 186, 0.8);
+  background: rgba(199, 216, 250, 0.8);
 }
 
 .pricing-txt {
@@ -165,8 +170,8 @@ export default {
 }
 
 .table {
-  --bs-table-hover-bg: rgba(255, 230, 252, 0.90);
-  --bs-table-striped-bg: rgba(255, 230, 252, 0.40);
+  --bs-table-hover-bg: rgba(232, 230, 255, 0.9);
+  --bs-table-striped-bg: rgba(235, 230, 255, 0.4);
 }
 
 

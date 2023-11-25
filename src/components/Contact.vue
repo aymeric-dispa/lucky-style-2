@@ -27,7 +27,7 @@
           <br/>
           <div class="row">
             <div><img src="../assets/house.svg" class="icon">
-              <h6><p class="icon-txt"><strong>Addresse du salon</strong><br/>Angélique Duchêne<br/> Rue Planesse 9<br/>5660
+              <h6><p class="icon-txt"><strong>Addresse du salon</strong><br/>Angélique Duchêne<br/> Rue de la ville 2<br/>5660
                 Couvin
               </p></h6>
             </div>
