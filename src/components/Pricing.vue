@@ -7,9 +7,6 @@
 
         J'utilise des shampoings haut de gamme Diamex, prévus pour respecter le type de peau et poils de chaque chien.
         <p><br/>
-          Vous ne savez pas vous déplacer ?
-          Le transport de votre animal peut être arrangé (des frais supplémentaires seront appliqués).
-        </p>
         Les tarifs diffèrent en fonction de l'espèce de l'animal, du type de soin à effectuer ainsi que de sa
         race/taille :
         <ul>
@@ -19,10 +16,11 @@
           <li>Grande race: Retriever, Bergers, Colley, Border Collie, Husky...</li>
           <li>Très Grande race: Terre Neuve, Bouvier Bernois, Montagne des pyrénées...</li>
         </ul>
+        </p>
         <h3>Liste des prix</h3>
         Veuillez selectionner le service dont votre animal a besoin ci-dessous afin d'afficher le prix correspondant
       </div>
-      <div class="accordion" id="pricingAccordion" >
+      <div class="accordion" id="pricingAccordion">
         <template v-for="price in prices" :key="price.name">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -35,22 +33,24 @@
             <div v-bind:id="price.name.replace(/\s+/g, '-')+'collapse'" class="accordion-collapse collapse"
                  aria-labelledby="headingOne"
                  data-bs-parent="#accordionExample">
-              <table class="table table-hover table-striped">
-                <thead>
-                <tr>
-                  <th scope="col">{{ price.differentiator }}</th>
-                  <th scope="col">Prix</th>
-                </tr>
-                </thead>
-                <tbody>
-                <template v-for="item in price.priceInfo " :key="item.id">
+              <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                  <thead>
                   <tr>
-                    <td>{{ item.differentiator }}</td>
-                    <td>{{ item.prix }}</td>
+                    <th scope="col" class="pricing-header">{{ price.differentiator }}</th>
+                    <th scope="col" class="pricing-header">Prix</th>
                   </tr>
-                </template>
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                  <template v-for="item in price.priceInfo" :key="item.id">
+                    <tr>
+                      <td class="pricing-cell">{{ item.differentiator }}</td>
+                      <td class="pricing-cell">{{ item.prix }}</td>
+                    </tr>
+                  </template>
+                  </tbody>
+                </table>
+              </div>
               <p style="padding-left: 10px" v-html="price.text"></p>
             </div>
           </div>
@@ -172,6 +172,15 @@ export default {
 .table {
   --bs-table-hover-bg: rgba(232, 230, 255, 0.9);
   --bs-table-striped-bg: rgba(235, 230, 255, 0.4);
+}
+.pricing-cell {
+  width: 50%;
+  text-align: center;
+}
+
+.pricing-header {
+  text-align: center;
+  width: 50%;
 }
 
 
