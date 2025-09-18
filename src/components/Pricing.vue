@@ -75,57 +75,55 @@ const dogSizes = {
 
 
 const tonte = [
-  {differentiator: dogSizes.MINI.valueOf(), prix: "à partir de 35€"},
-  {differentiator: dogSizes.SMALL.valueOf(), prix: "à partir de 40€"},
-  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "à partir de 45€"},
-  {differentiator: dogSizes.BIG.valueOf(), prix: "à partir de 60€"},
-  {differentiator: dogSizes.HUGE.valueOf(), prix: "à partir de 70€"},
-  {differentiator: dogSizes.COCKER.valueOf(), prix: "de 45€ à 57€"},
+  {differentiator: dogSizes.MINI.valueOf(), prix: "à partir de 37€"},
+  {differentiator: dogSizes.SMALL.valueOf(), prix: "à partir de 42€"},
+  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "à partir de 47€"},
+  {differentiator: dogSizes.BIG.valueOf(), prix: "45€/h"},
+  {differentiator: dogSizes.HUGE.valueOf(), prix: "45€/h"},
+  {differentiator: dogSizes.COCKER.valueOf(), prix: "à partir de 45€ à 65€"},
 ];
 
 const bath = [
-  {differentiator: dogSizes.MINI.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.SMALL.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "40€/h"},
-  {differentiator: dogSizes.BIG.valueOf(), prix: "40€/h"},
-  {differentiator: dogSizes.HUGE.valueOf(), prix: "40€/h"}
+  {differentiator: dogSizes.MINI.valueOf(), prix: "37€/h"},
+  {differentiator: dogSizes.SMALL.valueOf(), prix: "37€/h"},
+  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "45€/h"},
+  {differentiator: dogSizes.BIG.valueOf(), prix: "45€/h"},
+  {differentiator: dogSizes.HUGE.valueOf(), prix: "45€/h"}
 ];
 
 const cut = [
-  {differentiator: dogSizes.SMALL.valueOf(), prix: "de 45€ à 55€*"},
-  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "de 55€ à 65€*"},
-  {differentiator: dogSizes.BIG.valueOf(), prix: "40€/h"},
-  {differentiator: dogSizes.HUGE.valueOf(), prix: "40€/h"}
+  {differentiator: dogSizes.SMALL.valueOf(), prix: "37€/h*"},
+  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "45€/h"},
+  {differentiator: dogSizes.BIG.valueOf(), prix: "45€/h"},
+  {differentiator: dogSizes.HUGE.valueOf(), prix: "45€/h"}
 ];
 const trimming = [
-  {differentiator: dogSizes.SMALL.valueOf(), prix: "35€/h"},
-  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "40€/h"},
-  {differentiator: dogSizes.BIG.valueOf(), prix: "40€/h"},
-  {differentiator: dogSizes.HUGE.valueOf(), prix: "40€/h"}
+  {differentiator: dogSizes.SMALL.valueOf(), prix: "37€/h"},
+  {differentiator: dogSizes.MEDIUM.valueOf(), prix: "45€/h"},
+  {differentiator: dogSizes.BIG.valueOf(), prix: "45€/h"},
+  {differentiator: dogSizes.HUGE.valueOf(), prix: "45€/h"}
 ];
 const other = [
   {differentiator: "Coupe des ongles", prix: "de 5€ à 10€"},
-  {differentiator: "Toilettage chat et NAC", prix: "35€/h"}
+  {differentiator: "Toilettage chat et NAC", prix: "37€/h"}
 ];
 
 const cocker = [
-  {differentiator: "Dos trimmer", prix: "65€"},
-  {differentiator: "Dos tondu", prix: "60€"},
-  {differentiator: "Tonte", prix: "de 45€ à 57€"}
+  {differentiator: "Dos trimmer", prix: "67€"},
+  {differentiator: "Dos tondu", prix: "62€"},
+  {differentiator: "Tonte", prix: "de 45€ à 65€"}
 ];
 
 const prices = [
   {
     priceInfo: tonte,
     name: "Tonte",
-    differentiator: "Taille",
-    text: "*Des frais additionnels équivalents au tarif horaire (apd. 35€/h) seront facturés en cas de travail supplémentaire."
+    differentiator: "Taille"  
   },
   { priceInfo: bath,
     name: "Bain et démelage",
     differentiator: "Taille",
-    text: ["*Des frais additionnels équivalents au tarif horaire (apd. 35€/h) seront facturés en cas de travail supplémentaire.",
-        "En cas d'utilisation de shampoing anti-puce, des frais additionnels de 3€ à 10€ (selon la taille) seront appliqués si nécessaire."].join('<br>')
+    text: ["En cas d'utilisation de shampoing anti-puce, des frais additionnels de 5€ à 10€ (selon la taille) seront appliqués si nécessaire."].join('<br>')
   },
   {
     priceInfo: cut,
