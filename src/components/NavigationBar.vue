@@ -2,7 +2,7 @@
   <nav id="navbar-example2" class="navbar navbar-expand-lg fixed-top navbar-light px-3 bg-dark"
        :class="{'bg-white':scrollPosition >= 0,'bg-transparent':scrollPosition < 1}">
     <div class="container-fluid" id="yo">
-      <a class="navbar-brand" href="#">Lucky Style<span style="font-size: 85%; text-align: center; color: gray">&nbsp;&nbsp;0497/318099</span></a>
+      <a class="navbar-brand" href="#">Lucky Style<span style="font-size: 85%; text-align: center; color: gray">&nbsp;&nbsp;0498/628568</span></a>
 
       <a href="https://www.facebook.com/LUCKYzSTYLE/" target="_blank">
         <img class="icon" src="../assets/facebook.svg"></a>
