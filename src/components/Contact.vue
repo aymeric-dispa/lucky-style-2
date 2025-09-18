@@ -20,7 +20,7 @@
         <div class="col-md-4">
           <div class="row">
             <div><img src="../assets/phone.svg" class="icon">
-              <h6 style="padding-top: 5px"><p id="icon-txt"><strong>Numero de telephone</strong><br/>0497 31 80 99</p>
+              <h6 style="padding-top: 5px"><p id="icon-txt"><strong>Numero de telephone</strong><br/>0498 62 85 68</p>
               </h6>
             </div>
           </div>
